@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="container">
+    <a class="logo-link" [routerLink]="['./']">
+      <gh-svg-icon class="logo" [src]="logoIcon"></gh-svg-icon>
+
+      <span class="logo-text">
+        GitHub Trends
+      </span>
+    </a>
+
+    <input type="text" class="search-input" placeholder="Search by topic"
+           [(ngModel)]="topic" (change)="updateTopicQuery(topic)">
+  </div>
+</div>
+
+<!--<router-outlet></router-outlet>-->
+
+<div class="container">
+  <h1>
+    Trending in {{trendingText}}
+  </h1>
+  <h2>
+    See what the GitHub community has created in last 30 days.
+  </h2>
+
+  <div class="repositories">
+    <gh-repository *ngFor="let repository of repositories"
+                   [repository]="repository">
+    </gh-repository>
+
+    <div class="repositories-empty"
+         *ngIf="!searchInProgress && !repositories.length">
+      No repository found
+    </div>
+  </div>
+
+  <div class="filters">
+    <gh-topics [selectedTopic]="topic"></gh-topics>
+  </div>
+</div>

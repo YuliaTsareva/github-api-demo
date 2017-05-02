@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  padding: 24px 0;
+  border-bottom: 1px #e1e4e8 solid;
+  color: #586069;
+}
+
+.name {
+  display: block;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  color: #0366d6;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.name_strong {
+  font-weight: 600;
+}
+
+.description {
+  font-size: 14px;
+  padding: 4px 0;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.footer-item {
+  margin-right: 16px;
+}
+
+.gray-icon {
+  vertical-align: sub;
+  fill: #586069;
+  margin-right: 2px;
+}

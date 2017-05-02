@@ -1,0 +1,24 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.topic {
+  display: block;
+  padding: 4px 10px;
+  margin: 0 0 2px;
+  font-size: 12px;
+  color: #586069;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.topic:hover {
+  background-color: #eaecef;
+}
+
+.topic.selected {
+  color: #fff;
+  background-color: #0366d6;
+}

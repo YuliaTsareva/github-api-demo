@@ -1,0 +1,75 @@
+.container {
+  width: 980px;
+  margin: auto;
+}
+
+.header {
+  padding: 12px 0;
+  background-color: #24292e;
+}
+
+.logo-link {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.logo {
+  margin-right: 2px;
+}
+
+.logo-text {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  vertical-align: top
+}
+.search-input {
+  width: 300px;
+  min-height: 30px;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.125) none;
+  font-size: 13px;
+  outline: none;
+  padding: 0 8px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.repositories {
+  width: 75%;
+  float: left;
+  box-sizing: border-box;
+  min-height: 10px;
+  padding: 0 10px;
+}
+
+.repositories-empty {
+  text-align: center;
+  color: #586069;
+  margin-top: 20px;
+}
+
+.filters {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 10px;
+}

@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let topic of topics">
+    <a class="topic"
+       [routerLink]="['./']"
+       [queryParams]="{topic: topic.name}"
+       [class.selected]="topic.selected">{{topic.name}}</a>
+  </li>
+</ul>

@@ -54,6 +54,7 @@ h2 {
 }
 
 .repositories {
+  position: relative;
   width: 75%;
   float: left;
   box-sizing: border-box;

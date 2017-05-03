@@ -32,6 +32,10 @@
          *ngIf="!searchInProgress && !repositories.length">
       No repository found
     </div>
+
+    <div class="spinner-container" *ngIf="searchInProgress">
+      <div class="spinner"></div>
+    </div>
   </div>
 
   <div class="filters">

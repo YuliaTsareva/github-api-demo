@@ -14,6 +14,10 @@
   text-decoration: none;
 }
 
+.name:hover {
+  text-decoration: underline;
+}
+
 .name_strong {
   font-weight: 600;
 }

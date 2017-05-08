@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import * as moment from 'moment';
 
 @Injectable()
 export class GithubService {
@@ -10,7 +11,8 @@ export class GithubService {
   }
 
   getPopularRepositories(topic: string): Observable<any> {
-    let query = `created:>2017-04-01`;
+    const createdFrom = moment().subtract(30, 'day').format('YYYY-MM-DD');
+    let query = `created:>${createdFrom}`;
 
     if (topic) {
       query += `+topic:${topic}`;

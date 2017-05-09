@@ -8,7 +8,7 @@
     "build": "ng build",
     "build:ci": "ng build --prod --base-href /github-api-demo/",
     "test": "ng test",
-    "test:ci": "ng test --watch false --single-run true",
+    "test:ci": "ng test --watch false --single-run true --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

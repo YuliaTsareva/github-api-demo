@@ -14,23 +14,23 @@ const POPULAR_TOPICS = [
   templateUrl: './topics.component.html',
   styleUrls: ['./topics.component.css']
 })
-export class TopicsComponent implements OnInit {
+export class TopicsComponent {
   topics: Topic[] = [];
+
+  constructor() {
+    this.topics = POPULAR_TOPICS.map(topic => {
+      return {
+        name: topic,
+        selected: false
+      };
+    });
+  }
 
   @Input() set selectedTopic(value: string) {
     const lowerCaseTopic = value && value.toLowerCase();
 
     this.topics.forEach(topic => {
       topic.selected = topic.name.toLowerCase() === lowerCaseTopic;
-    });
-  }
-
-  ngOnInit() {
-    this.topics = POPULAR_TOPICS.map(topic => {
-      return {
-        name: topic,
-        selected: false
-      };
     });
   }
 }

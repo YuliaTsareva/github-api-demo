@@ -5,14 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GithubService } from './github.service';
-import { RepositoryComponent } from './repository/repository.component';
+import { RepositoriesService } from './repositories/repositories.service';
 import { SvgIconModule } from '../components/svg-icon/svg-icon.module';
-import { TopicsComponent } from './topics/topics.component';
+import { AuthComponent } from './auth/auth.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
+import { RepositoryComponent } from './repositories/repository/repository.component';
+import { TopicsComponent } from './repositories/topics/topics.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
+    RepositoriesComponent,
     RepositoryComponent,
     TopicsComponent
   ],
@@ -23,7 +28,8 @@ import { TopicsComponent } from './topics/topics.component';
     AppRoutingModule,
     SvgIconModule
   ],
-  providers: [GithubService],
+  providers: [RepositoriesService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

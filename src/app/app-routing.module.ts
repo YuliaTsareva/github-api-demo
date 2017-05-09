@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RepositoriesComponent } from './repositories/repositories.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   {
     path: '',
-    children: []
+    component: RepositoriesComponent
+  },
+  {
+    path: 'auth',
+    component: AuthComponent
   }
 ];
 

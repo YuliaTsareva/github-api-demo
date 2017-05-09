@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Repository } from '../model/repository';
-import starIcon from '!!raw-loader!../icons/star.svg';
-import forkIcon from '!!raw-loader!../icons/fork.svg';
+import starIcon from '!!raw-loader!../../icons/star.svg';
+import forkIcon from '!!raw-loader!../../icons/fork.svg';
 
 @Component({
   selector: 'gh-repository',

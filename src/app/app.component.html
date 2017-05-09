@@ -10,35 +10,13 @@
 
     <input type="text" class="search-input" placeholder="Search by topic"
            [(ngModel)]="topic" (change)="updateTopicQuery(topic)">
+
+    <a *ngIf="!authService.isAuthorized"
+       class="header-link"
+       (click)="signIn()">Sign in</a>
   </div>
 </div>
 
-<!--<router-outlet></router-outlet>-->
-
 <div class="container">
-  <h1>
-    Trending in {{trendingText}}
-  </h1>
-  <h2>
-    See what the GitHub community has created in last 30 days.
-  </h2>
-
-  <div class="repositories">
-    <gh-repository *ngFor="let repository of repositories"
-                   [repository]="repository">
-    </gh-repository>
-
-    <div class="repositories-empty"
-         *ngIf="!searchInProgress && !repositories.length">
-      No repository found
-    </div>
-
-    <div class="spinner-container" *ngIf="searchInProgress">
-      <div class="spinner"></div>
-    </div>
-  </div>
-
-  <div class="filters">
-    <gh-topics [selectedTopic]="topic"></gh-topics>
-  </div>
+  <router-outlet></router-outlet>
 </div>

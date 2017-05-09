@@ -3,7 +3,7 @@ set -e # exit with nonzero exit code if anything fails
 
 # copy files to the deploy directory
 mkdir deploy
-cp -r ./dist ./deploy
+cp -r ./dist/* ./deploy
 
 # go to the deploy directory and create a *new* Git repo
 cd deploy

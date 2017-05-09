@@ -19,7 +19,7 @@ export class RepositoriesComponent implements OnInit {
   repositories: Repository[] = [];
 
   constructor(private route: ActivatedRoute,
-              private githubService: RepositoriesService) {
+              private repositoriesService: RepositoriesService) {
   }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class RepositoriesComponent implements OnInit {
     this.trendingText = this.topic || DEFAULT_TRENDING_TOPIC;
     this.repositories = [];
 
-    this.githubService.getPopularRepositories(this.topic)
+    this.repositoriesService.getPopularRepositories(this.topic)
       .finally(() => {
         this.searchInProgress = false;
       })

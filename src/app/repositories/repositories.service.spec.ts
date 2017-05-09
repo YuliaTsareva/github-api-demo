@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { AuthService } from '../auth/auth.service';
 
 import { RepositoriesService } from './repositories.service';
 
 describe('RepositoriesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [RepositoriesService]
+      imports: [HttpModule],
+      providers: [RepositoriesService, {provide: AuthService, useValue: {}}],
     });
   });
 

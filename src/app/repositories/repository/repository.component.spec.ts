@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { RepositoryComponent } from './repository.component';
 
@@ -8,7 +9,8 @@ describe('RepositoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RepositoryComponent ]
+      declarations: [ RepositoryComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -16,6 +18,14 @@ describe('RepositoryComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RepositoryComponent);
     component = fixture.componentInstance;
+    component.repository = <any>{
+      name: 'Angular',
+      language: 'TypeScript',
+      owner: {
+        login: 'angular'
+      }
+    };
+
     fixture.detectChanges();
   });
 

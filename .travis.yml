@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - "7"
 
+script: npm run test:ci
+
 #deploy:
 #  provider: script
 #  script: bash scripts/deploy.sh

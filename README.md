@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/YuliaTsareva/github-api-demo.svg?branch=master)](https://travis-ci.org/YuliaTsareva/github-api-demo)
+[![Test Coverage](https://codeclimate.com/github/YuliaTsareva/github-api-demo/badges/coverage.svg)](https://codeclimate.com/github/YuliaTsareva/github-api-demo/coverage)
 
 # GithubApiDemo
 

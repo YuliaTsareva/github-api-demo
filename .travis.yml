@@ -4,12 +4,12 @@ node_js:
 
 script: npm run test:ci
 
-#deploy:
-#  provider: script
-#  script: bash scripts/deploy.sh
-#  skip_cleanup: true
-#  on:
-#    branch: master
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
 
 env:
  global:

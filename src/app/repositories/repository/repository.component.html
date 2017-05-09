@@ -1,6 +1,8 @@
-<a class="name" target="_blank" [href]="repository.html_url">
-    {{repository.owner.login}} / <span class="name_strong">{{repository.name}}</span>
-</a>
+<div class="name">
+    <a class="name-link" target="_blank" [href]="repository.html_url">
+        {{repository.owner.login}} / <span class="name-link_strong">{{repository.name}}</span>
+    </a>
+</div>
 
 <div class="description">
     {{repository.description}}

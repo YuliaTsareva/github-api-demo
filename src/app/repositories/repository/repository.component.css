@@ -6,19 +6,21 @@
 }
 
 .name {
-    display: block;
-    line-height: 1.5;
     margin-bottom: 4px;
+}
+
+.name-link {
+    line-height: 1.5;
     color: #0366d6;
     font-size: 20px;
     text-decoration: none;
 }
 
-.name:hover {
+.name-link:hover {
     text-decoration: underline;
 }
 
-.name_strong {
+.name-link_strong {
     font-weight: 600;
 }
 

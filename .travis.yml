@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "7"
 
-script: npm run test:ci && npm run build
+script: npm run test:ci && npm run build:ci
 
 deploy:
   provider: script

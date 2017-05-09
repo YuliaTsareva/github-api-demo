@@ -1,52 +1,52 @@
 .container {
-  width: 980px;
-  margin: auto;
+    width: 980px;
+    margin: auto;
 }
 
 .header {
-  padding: 12px 0;
-  background-color: #24292e;
+    padding: 12px 0;
+    background-color: #24292e;
 }
 
 .logo-link {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
 }
 
 .logo {
-  margin-right: 2px;
+    margin-right: 2px;
 }
 
 .logo-text {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 30px;
-  vertical-align: top
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    vertical-align: top
 }
 
 .search-input {
-  width: 300px;
-  min-height: 30px;
-  border: 0;
-  border-radius: 3px;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.125) none;
-  font-size: 13px;
-  outline: none;
-  padding: 0 8px;
+    width: 300px;
+    min-height: 30px;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.125) none;
+    font-size: 13px;
+    outline: none;
+    padding: 0 8px;
 }
 
 .header-link {
-  padding: 5px 8px;
-  font-weight: 600;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
+    padding: 5px 8px;
+    font-weight: 600;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
 }
 
 .header-link:hover {
-  color: #fff;
+    color: #fff;
 }

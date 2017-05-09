@@ -3,28 +3,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Component({
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+    templateUrl: './auth.component.html',
+    styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private authService: AuthService) {
-  }
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private authService: AuthService) {
+    }
 
-  ngOnInit() {
-    this.authService.isAuthorized = true;
+    ngOnInit() {
+        this.authService.isAuthorized = true;
 
-    this.authService.getAccessToken(this.route.snapshot.queryParams['code'])
-      .subscribe(() => {
-        this.router.navigate(['/']);
-        // this.githubService.getUser()
-        //   .subscribe(user => {
-        //     console.log('user', user);
-        //     this.router.navigate(['/']);
-        //   })
-      }, () => {
-        this.authService.isAuthorized = false;
-      });
-  }
+        this.authService.getAccessToken(this.route.snapshot.queryParams['code'])
+            .subscribe(() => {
+                this.router.navigate(['/']);
+                // this.githubService.getUser()
+                //   .subscribe(user => {
+                //     console.log('user', user);
+                //     this.router.navigate(['/']);
+                //   })
+            }, () => {
+                this.authService.isAuthorized = false;
+            });
+    }
 }

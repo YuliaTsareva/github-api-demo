@@ -14,22 +14,22 @@ import { TopicsComponent } from './repositories/topics/topics.component';
 import { AuthService } from './auth/auth.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AuthComponent,
-    RepositoriesComponent,
-    RepositoryComponent,
-    TopicsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule,
-    SvgIconModule
-  ],
-  providers: [RepositoriesService, AuthService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AuthComponent,
+        RepositoriesComponent,
+        RepositoryComponent,
+        TopicsComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule,
+        SvgIconModule
+    ],
+    providers: [RepositoriesService, AuthService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

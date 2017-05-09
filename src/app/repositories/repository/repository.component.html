@@ -1,9 +1,9 @@
 <a class="name" target="_blank" [href]="repository.html_url">
-  {{repository.owner.login}} / <span class="name_strong">{{repository.name}}</span>
+    {{repository.owner.login}} / <span class="name_strong">{{repository.name}}</span>
 </a>
 
 <div class="description">
-  {{repository.description}}
+    {{repository.description}}
 </div>
 
 <div class="footer">
@@ -11,17 +11,17 @@
     {{repository.language}}
   </span>
 
-  <span class="footer-item">
+    <span class="footer-item">
     <gh-svg-icon class="gray-icon" [src]="starIcon"></gh-svg-icon>
     {{repository.stargazers_count}}
   </span>
 
-  <span class="footer-item">
+    <span class="footer-item">
     <gh-svg-icon class="gray-icon" [src]="forkIcon"></gh-svg-icon>
     {{repository.forks_count}}
   </span>
 
-  <span class="footer-item">
+    <span class="footer-item">
     Created {{repository.created_at | date}}
   </span>
 </div>

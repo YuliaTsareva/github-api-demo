@@ -7,31 +7,31 @@ import 'rxjs/add/observable/of';
 import { AuthComponent } from './auth.component';
 
 class AuthServiceMock {
-  getAccessToken() {
-    return Observable.of('');
-  }
+    getAccessToken() {
+        return Observable.of('');
+    }
 }
 
 describe('AuthComponent', () => {
-  let component: AuthComponent;
-  let fixture: ComponentFixture<AuthComponent>;
+    let component: AuthComponent;
+    let fixture: ComponentFixture<AuthComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AuthComponent],
-      imports: [RouterTestingModule],
-      providers: [{provide: AuthService, useValue: new AuthServiceMock()}],
-    })
-      .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [AuthComponent],
+            imports: [RouterTestingModule],
+            providers: [{provide: AuthService, useValue: new AuthServiceMock()}],
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AuthComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AuthComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

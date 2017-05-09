@@ -6,34 +6,34 @@ import { AuthService } from './auth/auth.service';
 import logoIcon from '!!raw-loader!./icons/logo.svg';
 
 @Component({
-  selector: 'gh-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'gh-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  logoIcon = logoIcon;
-  topic: string;
+    logoIcon = logoIcon;
+    topic: string;
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private authService: AuthService) {
-  }
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private authService: AuthService) {
+    }
 
-  ngOnInit() {
-    this.route.queryParams
-      .debounceTime(50) // there should be a better solution
-      .subscribe(() => {
-        this.topic = this.route.snapshot.queryParams['topic'];
-      });
-  }
+    ngOnInit() {
+        this.route.queryParams
+            .debounceTime(50) // there should be a better solution
+            .subscribe(() => {
+                this.topic = this.route.snapshot.queryParams['topic'];
+            });
+    }
 
-  updateTopicQuery(topic: string) {
-    const queryParams = {topic};
+    updateTopicQuery(topic: string) {
+        const queryParams = {topic};
 
-    this.router.navigate(['./'], {queryParams});
-  }
+        this.router.navigate(['./'], {queryParams});
+    }
 
-  signIn() {
-    this.authService.signIn();
-  }
+    signIn() {
+        this.authService.signIn();
+    }
 }

@@ -1,22 +1,22 @@
 <div class="header">
-  <div class="container">
-    <a class="logo-link" [routerLink]="['./']">
-      <gh-svg-icon class="logo" [src]="logoIcon"></gh-svg-icon>
+    <div class="container">
+        <a class="logo-link" [routerLink]="['./']">
+            <gh-svg-icon class="logo" [src]="logoIcon"></gh-svg-icon>
 
-      <span class="logo-text">
+            <span class="logo-text">
         GitHub Trends
       </span>
-    </a>
+        </a>
 
-    <input type="text" class="search-input" placeholder="Search by topic"
-           [(ngModel)]="topic" (change)="updateTopicQuery(topic)">
+        <input type="text" class="search-input" placeholder="Search by topic"
+               [(ngModel)]="topic" (change)="updateTopicQuery(topic)">
 
-    <a *ngIf="!authService.isAuthorized"
-       class="header-link"
-       (click)="signIn()">Sign in</a>
-  </div>
+        <a *ngIf="!authService.isAuthorized"
+           class="header-link"
+           (click)="signIn()">Sign in</a>
+    </div>
 </div>
 
 <div class="container">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

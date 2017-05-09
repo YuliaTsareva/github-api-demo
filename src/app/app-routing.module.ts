@@ -4,18 +4,19 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: RepositoriesComponent
-  },
-  {
-    path: 'auth',
-    component: AuthComponent
-  }
+    {
+        path: '',
+        component: RepositoriesComponent
+    },
+    {
+        path: 'auth',
+        component: AuthComponent
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

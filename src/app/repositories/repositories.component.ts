@@ -9,46 +9,46 @@ import { Repository } from './model/repository';
 const DEFAULT_TRENDING_TOPIC = 'open source';
 
 @Component({
-  templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css']
+    templateUrl: './repositories.component.html',
+    styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
-  topic: string;
-  trendingText: string;
-  searchInProgress: boolean;
-  repositories: Repository[] = [];
+    topic: string;
+    trendingText: string;
+    searchInProgress: boolean;
+    repositories: Repository[] = [];
 
-  constructor(private route: ActivatedRoute,
-              private repositoriesService: RepositoriesService) {
-  }
+    constructor(private route: ActivatedRoute,
+                private repositoriesService: RepositoriesService) {
+    }
 
-  ngOnInit() {
-    this.route.queryParams
-      .subscribe(() => this.updateSelectedTopic());
-  }
+    ngOnInit() {
+        this.route.queryParams
+            .subscribe(() => this.updateSelectedTopic());
+    }
 
-  private updateSelectedTopic() {
-    this.topic = this.route.snapshot.queryParams['topic'];
+    private updateSelectedTopic() {
+        this.topic = this.route.snapshot.queryParams['topic'];
 
-    this.searchRepositories();
-  }
+        this.searchRepositories();
+    }
 
-  private searchRepositories() {
-    this.searchInProgress = true;
+    private searchRepositories() {
+        this.searchInProgress = true;
 
-    this.trendingText = this.topic || DEFAULT_TRENDING_TOPIC;
-    this.repositories = [];
+        this.trendingText = this.topic || DEFAULT_TRENDING_TOPIC;
+        this.repositories = [];
 
-    this.repositoriesService.getPopularRepositories(this.topic)
-      .finally(() => {
-        this.searchInProgress = false;
-      })
-      .subscribe(response => {
-        this.repositories = response.items;
+        this.repositoriesService.getPopularRepositories(this.topic)
+            .finally(() => {
+                this.searchInProgress = false;
+            })
+            .subscribe(response => {
+                this.repositories = response.items;
 
-        this.repositories.forEach(repository => {
-          repository.created_at = new Date(repository.created_at);
-        });
-      });
-  }
+                this.repositories.forEach(repository => {
+                    repository.created_at = new Date(repository.created_at);
+                });
+            });
+    }
 }

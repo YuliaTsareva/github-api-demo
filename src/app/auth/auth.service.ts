@@ -7,28 +7,28 @@ const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
 @Injectable()
 export class AuthService {
-  accessToken: string;
-  isAuthorized: boolean = false;
+    accessToken: string;
+    isAuthorized: boolean = false;
 
-  constructor(private http: Http) {
-  }
+    constructor(private http: Http) {
+    }
 
-  signIn() {
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&state=12345`;
-  }
+    signIn() {
+        window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&state=12345`;
+    }
 
-  getAccessToken(code: string) {
-    const accessTokenParams = `client_id=${CLIENT_ID}&code=${code}&state=12345&client_secret=${CLIENT_SECRET}`;
-    const accessTokenUrl=`https://github.com/login/oauth/access_token?${accessTokenParams}`;
-    const headers = new Headers({'Accept': 'application/json'});
+    getAccessToken(code: string) {
+        const accessTokenParams = `client_id=${CLIENT_ID}&code=${code}&state=12345&client_secret=${CLIENT_SECRET}`;
+        const accessTokenUrl = `https://github.com/login/oauth/access_token?${accessTokenParams}`;
+        const headers = new Headers({'Accept': 'application/json'});
 
-    return this.http.post(`${CORS_PROXY}${accessTokenUrl}`, null, {headers})
-      .map(response => response.json())
-      .map(response => {
-        this.accessToken = response.access_token;
-        this.isAuthorized = true;
+        return this.http.post(`${CORS_PROXY}${accessTokenUrl}`, null, {headers})
+            .map(response => response.json())
+            .map(response => {
+                this.accessToken = response.access_token;
+                this.isAuthorized = true;
 
-        return response;
-      });
-  }
+                return response;
+            });
+    }
 }

@@ -2,14 +2,14 @@ language: node_js
 node_js:
   - "7"
 
-script: npm run test:ci
+script: npm run test:ci && npm run build
 
 deploy:
   provider: script
   script: bash scripts/deploy.sh
   skip_cleanup: true
   on:
-    branch: master
+    branch: travis-ci
 
 env:
  global:

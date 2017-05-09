@@ -4,6 +4,14 @@ node_js:
 
 script: npm run test:ci && npm run build:ci
 
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < codecoverage/lcov.info
+
+addons:
+  code_climate:
+    repo_token: e3d139d33dfd3da1cb0c36e04c5bee2741a5e2edb1b8d659c18a6b150182495b
+
 deploy:
   provider: script
   script: bash scripts/deploy.sh

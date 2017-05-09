@@ -1,6 +1,8 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
+const isCI = !!process.env['CI'];
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -38,10 +40,10 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: process.env['CI']
+    autoWatch: !isCI,
+    browsers: isCI
       ? ['PhantomJS']
       : ['Chrome'],
-    singleRun: false
+    singleRun: isCI
   });
 };
